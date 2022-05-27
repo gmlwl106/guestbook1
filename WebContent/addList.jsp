@@ -61,7 +61,7 @@
 				<td width="150px"><%=g.getName() %></td>
 				<td width="300px"><%=g.getDate() %></td>
 				<td>
-					<form action="./pwForm.jsp" method="get">
+					<form action="./deleteForm.jsp" method="get">
 						<button type="submit" name="del_no" value=<%=g.getNo() %>>삭제</button>
 					</form>
 				</td>
