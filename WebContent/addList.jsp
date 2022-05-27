@@ -58,7 +58,11 @@
 				<td width="50px"><%=g.getNo() %></td>
 				<td width="150px"><%=g.getName() %></td>
 				<td width="300px"><%=g.getDate() %></td>
-				<td><a href="">삭제</a></td>
+				<td>
+					<form action="./pwForm.jsp" method="get">
+						<button type="submit" name="del_no" value=<%=g.getNo() %>>삭제</button>
+					</form>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="4" width="590px">
