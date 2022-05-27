@@ -1,6 +1,6 @@
 package com.javaex.vo;
 
-public class GuestVo {
+public class GuestBookVo {
 
 	//필드
 	private int no;
@@ -12,15 +12,15 @@ public class GuestVo {
 	
 	
 	//생성자
-	public GuestVo() {
+	public GuestBookVo() {
 	}
-	public GuestVo(String name, String password, String content, String date) {
+	public GuestBookVo(String name, String password, String content, String date) {
 		this.name = name;
 		this.password = password;
 		this.content = content;
 		this.date = date;
 	}
-	public GuestVo(int no, String name, String password, String content, String date) {
+	public GuestBookVo(int no, String name, String password, String content, String date) {
 		this.no = no;
 		this.name = name;
 		this.password = password;

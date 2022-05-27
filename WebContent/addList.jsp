@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.javaex.dao.GuestDao" %>
-<%@ page import="com.javaex.vo.GuestVo" %>
+<%@ page import="com.javaex.dao.GuestBookDao" %>
+<%@ page import="com.javaex.vo.GuestBookVo" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
     
 <%
-	GuestDao guestDao = new GuestDao();
-	List<GuestVo> guestList = guestDao.getGuestList();
-	
-	Date date = new Date();
-	SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-	String regDate = simpleDate.format(date);
+	GuestBookDao guestDao = new GuestBookDao();
+   	List<GuestBookVo> guestList = guestDao.getGuestList();
+   	
+   	Date date = new Date();
+   	SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+   	String regDate = simpleDate.format(date);
 %>
 <!DOCTYPE html>
 <html>
@@ -52,7 +52,9 @@
 	
 	
 	<!-- 글 출력 -->
-	<% for(GuestVo g : guestList) { %>
+	<%
+	for(GuestBookVo g : guestList) {
+	%>
 		<table border="1">
 			<tr>
 				<td width="50px"><%=g.getNo() %></td>

@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.javaex.vo.GuestVo;
+import com.javaex.vo.GuestBookVo;
 
-public class GuestDao {
+public class GuestBookDao {
 
 	// 0. import java.sql.*;
 	private Connection conn = null;
@@ -57,9 +57,9 @@ public class GuestDao {
 	
 	
 	//Guestbook 출력
-	public List<GuestVo> getGuestList() {
+	public List<GuestBookVo> getGuestList() {
 		
-		List<GuestVo> guestList = new ArrayList<GuestVo>();
+		List<GuestBookVo> guestList = new ArrayList<GuestBookVo>();
 		
 		getConnection();
 		
@@ -86,7 +86,7 @@ public class GuestDao {
 				String content = rs.getString("content");
 				String reg_date = rs.getString("reg_date");
 
-				guestList.add(new GuestVo(no, name, password, content, reg_date));
+				guestList.add(new GuestBookVo(no, name, password, content, reg_date));
 			}
 
 		} catch (SQLException e) {
@@ -99,7 +99,7 @@ public class GuestDao {
 	
 	
 	//Guest 추가
-	public int guestInsert(GuestVo guestVo) {
+	public int guestInsert(GuestBookVo guestVo) {
 		int count = 0;
 		getConnection();
 
@@ -134,8 +134,8 @@ public class GuestDao {
 	
 	
 	//Guest 찾기
-	public GuestVo getGuest(int delNo) {
-		GuestVo guest = null;
+	public GuestBookVo getGuest(int delNo) {
+		GuestBookVo guest = null;
 		getConnection();
 		
 		try {
@@ -163,7 +163,7 @@ public class GuestDao {
 				String content = rs.getString("content");
 				String reg_date = rs.getString("reg_date");
 
-				guest = new GuestVo(no, name, password, content, reg_date);
+				guest = new GuestBookVo(no, name, password, content, reg_date);
 			}
 
 		} catch (SQLException e) {
